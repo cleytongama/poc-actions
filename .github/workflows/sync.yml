@@ -23,10 +23,10 @@ jobs:
       - name: Rebase branch
         run: |
           git fetch
-          git checkout ${{ github.event.pull_request.head.ref }}
-          git rebase origin/${{ github.event.pull_request.base.ref }}
+          git checkout main
+          git rebase main
       - name: Push to staging
         uses: ad-m/github-push-action@v0.6.0
         with:
-          github_token: ${{ secrets.TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: homologation
