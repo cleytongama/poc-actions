@@ -23,7 +23,7 @@ jobs:
           git checkout main
           git reset --hard origin/main
           git checkout develop
-          git merge main
+          git rebase ours main
           git push origin +develop
 
         working-directory: .
