@@ -19,7 +19,8 @@ jobs:
         run: |
           git fetch --all
           git checkout develop
-          git rebase origin/main
+          git reset --hard develop origin/main
+
         working-directory: .
       - name: Realizar commit e push das alterações no ambiente de homologação
         uses: EndBug/add-and-commit@v7
