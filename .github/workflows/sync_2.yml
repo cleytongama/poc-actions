@@ -19,7 +19,11 @@ jobs:
         run: |
           git fetch --all
           git checkout develop
+          git reset --hard origin/develop
+          git checkout main
           git reset --hard origin/main
+          git checkout develop
+          git develop rebase main
           git push origin +develop
 
         working-directory: .
