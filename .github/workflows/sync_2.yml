@@ -13,8 +13,8 @@ jobs:
           ref: main
       - name: Configurar o usuário e email do Git
         run: |
-          git config --global user.email "cleytongama@gmail.com"
-          git config --global user.name "Cleyton Gama"
+          git config --global user.email "actions@github.com"
+          git config --global user.name "Github Actions"
       - name: Atualizar o ambiente de homologação com as alterações de produção
         run: |
           git fetch --all
@@ -35,7 +35,7 @@ jobs:
           author_email: "actions@github.com"
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
-          GIT_AUTHOR_NAME: "Cleyton Gama"
-          GIT_AUTHOR_EMAIL: cleytongama@gmail.com
-          GIT_COMMITTER_NAME: "Cleyton Gama"
-          GIT_COMMITTER_EMAIL: cleytongama@gmail.com
+          GIT_AUTHOR_NAME: "Github Actions"
+          GIT_AUTHOR_EMAIL: actions@github.com
+          GIT_COMMITTER_NAME: "Github Actions"
+          GIT_COMMITTER_EMAIL: actions@github.com
