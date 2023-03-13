@@ -19,7 +19,7 @@ jobs:
         run: |
           git fetch --all
           git checkout develop
-          git reset --hard develop origin/main
+          git reset --hard origin/main
 
         working-directory: .
       - name: Realizar commit e push das alterações no ambiente de homologação
