@@ -6,7 +6,7 @@ on:
       - release/onboarding
       - release/operations
 jobs:
-  atualizacao_homologation:
+  atualizacao_hom:
     runs-on: ubuntu-latest
     steps:
       - name: Clonar o repositório
@@ -20,35 +20,35 @@ jobs:
       - name: Atualizar o ambiente de homologação com as alterações de produção MAIN
         run: |
           git fetch --all
-          git checkout homologation
-          git reset --hard origin/homologation
+          git checkout hom
+          git reset --hard origin/hom
           git checkout main
           git reset --hard origin/main
-          git checkout homologation
+          git checkout hom
           git rebase main --strategy-option ours 
-          git push origin +homologation
+          git push origin +hom
 
       - name: Atualizar o ambiente de homologação com as alterações de onboarding
         run: |
           git fetch --all
-          git checkout homologation
-          git reset --hard origin/homologation
+          git checkout hom
+          git reset --hard origin/hom
           git checkout release/onboarding
           git reset --hard origin/release/onboarding
-          git checkout homologation
+          git checkout hom
           git rebase release/onboarding --strategy-option ours 
-          git push origin +homologation
+          git push origin +hom
 
       - name: Atualizar o ambiente de homologação com as alterações de operations
         run: |
           git fetch --all
-          git checkout homologation
-          git reset --hard origin/homologation
+          git checkout hom
+          git reset --hard origin/hom
           git checkout release/operations
           git reset --hard origin/release/operations
-          git checkout homologation
+          git checkout hom
           git rebase release/operations --strategy-option ours 
-          git push origin +homologation
+          git push origin +hom
 
         working-directory: .
       - name: Realizar commit e push das alterações no ambiente de homologação
